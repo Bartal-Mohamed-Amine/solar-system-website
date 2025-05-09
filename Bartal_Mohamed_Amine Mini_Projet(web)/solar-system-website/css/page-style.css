@@ -1,0 +1,571 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to top, #010130, #000);
+  color: #f0f0f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/stars.png') repeat;
+  opacity: 0.1;
+  z-index: -1;
+  animation: moveStars 60s linear infinite;
+}
+header {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: #00ffff;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 18px;
+  position: relative;
+}
+
+nav a.active,
+nav a:hover {
+  color: #00ffff;
+}
+
+nav a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00ffff;
+  left: 0;
+  bottom: -5px;
+}
+main {
+  padding: 80px 50px;
+}
+
+.page-content {
+  animation: fadeIn 1.5s ease;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.page-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff;
+}
+
+.page-content p,
+.page-content ul {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.page-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  margin-top: 50px;
+  font-size: 14px;
+  color: #777;
+}
+#launchBtn {
+  animation: rocketShake 2s infinite;
+}
+
+.rocket {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  width: 40px;
+  height: 80px;
+  background: url('images/rocket.png') no-repeat center/contain;
+  transform: translateX(-50%) scale(1);
+  z-index: 9999;
+  animation: rocketShake 0.5s infinite;
+}
+
+.smoke {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0) 70%);
+  opacity: 0.8;
+  transform: translateX(-50%) scale(1);
+  z-index: 9998;
+  transition: 2s;
+}
+
+.launch {
+  animation: rocketLaunch 3s forwards;
+}
+
+.smokeExpand {
+  animation: smokeExpand 3s forwards;
+}
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+  opacity: 0.8;
+}
+
+.shooting-star {
+  position: absolute;
+  top: -10px;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, white, rgba(255,255,255,0));
+  animation: shoot 3s linear infinite;
+  opacity: 0;
+}
+
+.galaxy {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotateGalaxy 100s linear infinite;
+  z-index: 0;
+}
+
+.planets-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.planet {
+  position: absolute;
+  width: 80px;
+  opacity: 0.7;
+  animation: floatPlanet 60s linear infinite;
+}
+
+.planet1 {
+  top: 10%;
+  left: 20%;
+}
+
+.planet2 {
+  top: 50%;
+  left: 70%;
+  animation-duration: 90s;
+}
+
+.planet3 {
+  top: 80%;
+  left: 40%;
+  animation-duration: 75s;
+}
+
+.comet {
+  position: fixed;
+  top: 0;
+  left: -100px;
+  width: 50px;
+  height: 10px;
+  background: linear-gradient(90deg, #fff, #0ff, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 5px #0ff;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 999;
+  transform: rotate(45deg);
+}
+.spaceship-navbar {
+  background: linear-gradient(135deg, #0b0f18, #1b2330);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  border-bottom: 2px solid #00ffe1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  color: #00ffe1;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00ffe1;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #c1f1f9;
+  font-size: 18px;
+  padding: 8px 15px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  border-color: #00ffe1;
+  box-shadow: 0 0 10px #00ffe1;
+}
+
+/* ===== CONTENT CARDS & COMPONENTS ===== */
+.equation-card {
+  background: rgba(15, 30, 60, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--secondary);
+}
+
+.equation {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.code-sample {
+  background: #1e1e3f;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.code-sample::before {
+  content: 'Python';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--primary);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0 8px 0 8px;
+  font-size: 0.8rem;
+}
+
+.simulation-container {
+  width: 100%;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.concept-card {
+  background: rgba(20, 40, 80, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 3px solid var(--secondary);
+}
+
+.comment { color: #6a9955; font-style: italic; }
+.keyword { color: #569cd6; }
+.function { color: #dcdcaa; }
+.number { color: #b5cea8; }
+
+.design-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.principle-card {
+  background: rgba(15, 30, 60, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  border-top: 3px solid var(--secondary);
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 150, 255, 0.2);
+}
+
+.design-visual {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.rocket-type {
+  padding: 1rem;
+  background: rgba(20, 40, 80, 0.5);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
+.aerodynamics-diagram {
+  width: 100%;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: var(--secondary);
+  font-size: 24px;
+  animation: flowAnimation 8s linear infinite;
+}
+
+.rocket-silhouette-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 150px;
+  height: 300px;
+  z-index: 10;
+}
+
+.rocket-silhouette {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(0, 200, 255, 0.7));
+  animation: float 6s ease-in-out infinite;
+}
+.aero-rocket {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100%;
+  max-width: 80px;
+  z-index: 2;
+}
+.mission-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+  position: relative;
+}
+.timeline-item {
+  background: rgba(10, 25, 47, 0.7);
+  border-left: 4px solid var(--secondary);
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  z-index: 1;
+}
+.timeline-item h4 {
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+.rocket-science-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.science-card {
+  background: rgba(15, 30, 60, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.science-card:hover {
+  transform: translateY(-5px);
+}
+.science-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  height: 200px;
+  object-fit: cover;
+}
+.launch-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: 12px;
+}
+.launch-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.fuel-diagram {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  display: block;
+}
+.launch-sequence {
+  background: rgba(15, 30, 60, 0.6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  counter-reset: launch-step;
+}
+.launch-sequence li {
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+.launch-sequence li::before {
+  counter-increment: launch-step;
+  content: counter(launch-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--secondary);
+  color: white;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 5000px; }
+}
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+@keyframes shoot {
+  0% { transform: translateX(0) translateY(0) rotate(45deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateX(600px) translateY(600px) rotate(45deg); opacity: 0; }
+}
+@keyframes rotateGalaxy {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes floatPlanet {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes flowAnimation {
+  0% { transform: translateX(-50px) translateY(50px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(calc(100vw - 100px)) translateY(150px) rotate(180deg); opacity: 0; }
+}

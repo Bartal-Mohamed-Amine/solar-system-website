@@ -1,0 +1,128 @@
+:root {
+      --bleu-primaire: #0066ff;
+      --bleu-secondaire: #00ccff;
+      --fond-sombre: #0a0a1a;
+      --fond-contenu: #161b22;
+      --texte-clair: #e4e6eb;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--fond-sombre);
+      color: var(--texte-clair);
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+    h1, h2, h3 {
+      background: linear-gradient(45deg, var(--bleu-primaire), var(--bleu-secondaire));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-top: 1.5em;
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: var(--fond-contenu);
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 102, 255, 0.15);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(0, 102, 255, 0.3);
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      text-align: left;
+    }
+    th {
+      background: rgba(0, 102, 255, 0.15);
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: rgba(0, 102, 255, 0.05);
+    }
+    code {
+      background: rgba(0, 102, 255, 0.15);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: var(--bleu-secondaire);
+    }
+    .mermaid {
+      background: var(--fond-contenu);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    ul, ol {
+      padding-left: 2rem;
+      margin: 1rem 0;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    a {
+      color: var(--bleu-secondaire);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    a:hover {
+      text-decoration: underline;
+      text-shadow: 0 0 8px rgba(0, 204, 255, 0.4);
+    }
+    .bouton-retour {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: linear-gradient(45deg, var(--bleu-primaire), var(--bleu-secondaire));
+      color: white;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .bouton-retour:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+      text-decoration: none;
+    }
+    .section {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+      padding-bottom: 2rem;
+    }
+    .highlight {
+      background: rgba(0, 102, 255, 0.1);
+      padding: 0.1rem 0.3rem;
+      border-radius: 3px;
+    }
+    .feature-box {
+      background: rgba(0, 102, 255, 0.08);
+      border-left: 3px solid var(--bleu-secondaire);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 5px 5px 0;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .tech-item {
+      background: rgba(0, 102, 255, 0.15);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }

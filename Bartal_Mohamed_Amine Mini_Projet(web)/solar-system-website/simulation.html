@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Simulation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/simulation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="simulation-page">
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="#contact">Contact</a>
+            <a href="simulation.html" class="active">Simulation</a>
+            <a href="report.html" class="bouton-rapport">
+                <i class="fas fa-file-alt"></i> Rapport
+            </a>
+        </div>
+        <div class="auth-buttons">
+            <button class="auth-button login" id="loginBtn">Connexion</button>
+            <button class="auth-button signup" id="signupBtn">Inscription</button>
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="stars-container" id="stars-container"></div>
+    <div class="comet"></div>
+    
+    <main class="simulation-container">
+        <div class="solar-system">
+            <div class="sun">
+                <img src="./images/sun.png" alt="Sun">
+            </div>
+            <div class="mercury"></div>
+            <div class="venus"></div>
+            <div class="earth">
+                <div class="moon"></div>
+            </div>
+            <div class="mars"></div>
+            <div class="jupiter"></div>
+            <div class="saturn"></div>
+            <div class="uranus"></div>
+            <div class="neptune"></div>
+            <div class="pluto"></div>
+        </div>
+    </main>
+    <div class="modal" id="loginModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer la fenêtre">&times;</button>
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer la fenêtre">&times;</button>
+            <h2>Inscription</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Nom complet</label>
+                    <input type="text" id="signupName" placeholder="Exemple : Bartal Mohamed Amine" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Mot de passe</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirmer le mot de passe</label>
+                    <input type="password" id="signupConfirm" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-home-btn">BACK HOME</a>
+  <script src="js/simulation.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

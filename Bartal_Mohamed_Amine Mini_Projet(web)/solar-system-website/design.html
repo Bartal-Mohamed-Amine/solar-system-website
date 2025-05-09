@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design des Fusées - Cosmos Explorer</title>
+  <link rel="stylesheet" href="css/page-style.css">
+<link rel="icon" href="images/favicon.png" type="image/jpeg">
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+  <audio id="spaceship-sound" autoplay loop volume="0.2">
+    <source src="spaceship-rumble.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+  <div class="galaxy"></div>
+  <div class="stars" id="stars"></div>
+  <div class="comet"></div>
+
+  <header class="spaceship-navbar">
+    <div class="logo"> <img src="images/favicon.png" alt="mini-logo">Explorateur Cosmos</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="design.html" class="active">L'Art des Fusées</a></li>
+        <li><a href="code.html">Algorithmes Célestes</a></li>
+        <li><a href="launch.html">Décollage Imminent</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-content">
+      <h1>Design & Aérodynamique des Fusées</h1>
+      <p class="subtitle">Comment les ingénieurs conquièrent la résistance atmosphérique et la gravité pour atteindre l'espace</p>
+      
+      <div class="aerodynamics-diagram" id="aerodynamicsDiagram">
+        <img src="images/rocket.png" alt="Fusée" class="aero-rocket">
+      </div>
+      
+      <h2>Principes Fondamentaux de Conception</h2>
+      <div class="design-principles">
+        <div class="principle-card">
+          <h3>Forme Aérodynamique</h3>
+          <p>Le nez conique et le corps effilé minimisent la traînée atmosphérique lors de l'ascension. Les ailettes assurent la stabilité dans la basse atmosphère.</p>
+          <img src="images/pression.png" alt="Profil aérodynamique d'une fusée" class="design-visual" loading="lazy">
+          <p class="image-caption">Principes de design aérodynamique</p>
+        </div>
+        
+        <div class="principle-card">
+          <h3>Rapport Poussée/Poids</h3>
+          <p>Les fusées doivent produire une poussée supérieure à leur propre poids pour décoller. La Saturn V produisait 7,6 millions de livres de poussée au lancement.</p>
+          <img src="images/poussée.png" alt="Diagramme de poussée" class="design-visual" loading="lazy">
+          <p class="image-caption">Moteur de fusée en pleine poussée</p>
+        </div>
+        
+        <div class="principle-card">
+          <h3>Intégrité Structurelle</h3>
+          <p>Des matériaux légers mais résistants comme les alliages d'aluminium et le titane supportent les vibrations intenses et les forces aérodynamiques.</p>
+          <img src="images/structure.jpeg" alt="Matériaux de construction" class="design-visual" loading="lazy">
+          <p class="image-caption">Matériaux modernes pour fusées</p>
+        </div>
+      </div>
+      
+      <h2>Défis Aérodynamiques</h2>
+      <div class="comparison-grid">
+        <div class="rocket-type">
+          <h4>Max Q (Pression Dynamique Maximale)</h4>
+          <p>Point de stress aérodynamique maximal, environ 1 minute après le lancement quand la vitesse est élevée mais l'atmosphère encore dense.</p>
+          <img src="images/maxQ.png" alt="Diagramme Max Q" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+        <div class="rocket-type">
+          <h4>Virage Gravitationnel</h4>
+          <p>Manoeuvre d'inclinaison progressive utilisant la gravité terrestre pour changer de trajectoire sans gaspillage de carburant.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Gravity_turn_-_phase_2.svg" alt="Diagramme virage gravitationnel" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+        <div class="rocket-type">
+          <h4>Stabilisation par Ailettes</h4>
+          <p>Les ailettes fournissent une stabilité passive dans la basse atmosphère mais deviennent inefficaces dans l'espace où des systèmes de contrôle réactionnel prennent le relais.</p>
+          <img src="https://www1.grc.nasa.gov/wp-content/uploads/rktstab-600x450.gif" alt="Diagramme stabilisation" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+      </div>
+      
+      <img src="https://images.unsplash.com/photo-1517976487492-5750f3195933?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Forces aérodynamiques sur les fusées" class="design-visual" loading="lazy">
+      <p class="image-caption">Forces aérodynamiques pendant l'ascension</p>
+      
+      <h2>Évolution des Formes de Fusées</h2>
+      <div class="comparison-grid">
+        <div class="rocket-type">
+          <h4>Fusée V-2 (1944)</h4>
+          <p>Missile balistique précoce au design trapu optimisé pour la portée plutôt que le vol orbital.</p>
+          <img src="https://2.bp.blogspot.com/-5FqNus3cuUU/WHchb4Ukw5I/AAAAAAAAMI4/2CPiVDQ2x0sp7hLVUcSvs3t-ndxUFiwTACLcB/s1600/v2_rocket_4.jpg" alt="Fusée V-2" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+        <div class="rocket-type">
+          <h4>Saturn V (1967)</h4>
+          <p>Design élancé pour l'insertion orbitale, avec des profils aérodynamiques soigneusement étagés.</p>
+          <img src="images/saturn-v.jpg" alt="Saturn V" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+        <div class="rocket-type">
+          <h4>SpaceX Falcon 9 (2015)</h4>
+          <p>Design moderne priorisant la réutilisabilité avec des ailettes à grille pour la descente contrôlée.</p>
+          <img src="https://spacecenter.org/wp-content/uploads/2022/09/CRS-13_launch-view-scaled-1.jpeg" alt="Falcon 9" style="width:100%; margin-top:1rem;" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <footer>
+    <p>© 2025 Exploration du Système Solaire - Mini Projet</p>
+    <div class="footer-links">
+      <a href="#">Politique de Confidentialité</a>
+      <a href="#">Conditions d'Utilisation</a>
+      <a href="#">Contactez le CNES</a>
+    </div>
+  </footer>
+  </footer>
+  
+  <script>
+    
+    const diagram = document.getElementById('aerodynamicsDiagram');
+    const arrows = ['→', '↗', '↑', '↖', '←', '↙', '↓', '↘'];
+    
+    for (let i = 0; i < 12; i++) {
+      const arrow = document.createElement('div');
+      arrow.className = 'flow-arrow';
+      arrow.textContent = arrows[i % arrows.length];
+      arrow.style.left = `${Math.random() * 20}%`;
+      arrow.style.top = `${Math.random() * 100}%`;
+      arrow.style.animationDelay = `${Math.random() * 5}s`;
+      diagram.appendChild(arrow);
+    }
+    
+    
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 200; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 5}s`;
+      stars.appendChild(star);
+    }
+  </script>
+</body>
+</html>

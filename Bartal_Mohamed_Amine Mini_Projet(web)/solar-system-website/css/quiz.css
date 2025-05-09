@@ -1,0 +1,226 @@
+
+.quiz-container {
+    background: var(--nav-dark);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem auto;
+    max-width: 850px;
+    box-shadow: var(--shadow);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.light-mode .quiz-container {
+    background: var(--nav-light);
+}
+
+.quiz-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.quiz-progress {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--progress, 10%);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+.progress-text {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    text-align: right;
+    margin-top: 0.3rem;
+}
+
+body.light-mode .progress-text {
+    color: var(--primary);
+}
+
+
+.quiz-question {
+    margin-bottom: 2rem;
+}
+
+.quiz-question h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.option {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+body.light-mode .option {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+    background: rgba(0, 204, 255, 0.25);
+    transform: translateY(-4px);
+}
+
+.option.selected {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    border-color: transparent;
+}
+
+
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.quiz-navigation button {
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-dark);
+    transition: background 0.3s, transform 0.3s;
+}
+
+body.light-mode .quiz-navigation button {
+    background: rgba(0, 0, 0, 0.07);
+    color: var(--text-light);
+}
+
+.quiz-navigation button:hover:not(:disabled) {
+    background: rgba(0, 204, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.quiz-navigation button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#submit-btn {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.quiz-result {
+    background: var(--nav-dark);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem auto;
+    max-width: 850px;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.6s ease-out;
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.light-mode .quiz-result {
+    background: var(--nav-light);
+}
+
+.quiz-result h2 {
+    color: var(--secondary);
+    text-align: center;
+}
+
+body.light-mode .quiz-result h2 {
+    color: var(--primary);
+}
+
+#score {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+body.light-mode #score {
+    color: var(--primary);
+}
+
+#result-details {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.result-item {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.3s;
+}
+
+body.light-mode .result-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.result-item.correct {
+    color: #4caf50;
+}
+
+.result-item.incorrect {
+    color: #f44336;
+}
+
+
+#restart-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.9rem 2.2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
