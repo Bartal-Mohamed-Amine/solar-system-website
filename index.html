@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration du Système Solaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="icon" href="images/favicon.png" type="image/jpeg">
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+
+<body>
+    <div class="comet"></div>
+    <audio id="spaceship-sound" autoplay loop volume="0.2">
+        <source src="spaceship-rumble.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+      
+    <nav>
+        <div class="nav-links">
+            <a href="index.html" class="active">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="#contact">Contact</a>
+            <a href="simulation.html">simulation</a>
+            <a href="report.html" class="bouton-rapport">
+                <i class="fas fa-file-alt"></i> Rapport
+            </a>
+        </div>
+        <div class="auth-buttons">
+            <button class="auth-button login" id="loginBtn" aria-label="Se connecter">Connexion</button>
+            <button class="auth-button signup" id="signupBtn" aria-label="S'inscrire">Inscription</button>
+            <div class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header id="top">
+            <h1>EXPLORATION DU SYSTÈME SOLAIRE</h1>
+            <p class="subtitle">Un mini-site éducatif interactif dédié à la découverte des planètes de notre système solaire.</p>
+            <a href="#planets" class="cta-button">En savoir plus</a>
+        </header>
+
+        <section id="planets" aria-labelledby="planets-header">
+            <h2 id="planets-header">Les Planètes de Notre Système Solaire</h2>
+            <div class="planets-container">
+                
+            </div>
+        </section>
+
+        <section class="solar-cards">
+            <div class="container1">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="images/design.png" alt="design">
+                    </div>
+                    <div class="contentBx">
+                        <h2>L'Art des Fusées</h2>
+                        <p>L'art invisible qui propulse les étoiles!</p>
+                        <a href="design.html"><span>Read More</span></a>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="images/code.png" alt="code">
+                    </div>
+                    <div class="contentBx">
+                        <h2>Algorithmes Célestes</h2>
+                        <p>Des algorithmes qui défient la gravité!</p>
+                        <a href="code.html"><span>Read More</span></a>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="images/launch.png" alt="launch">
+                    </div>
+                    <div class="contentBx">
+                        <h2>Décollage Imminent</h2>
+                        <p>Préparez-vous au décollage et explorez les merveilles de l'espace avec nous !</p>
+                        <a href="launch.html"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+          
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2>À Propos de Nous</h2>
+                <p>Nous sommes passionnés par l'astronomie et l'éducation. Notre objectif est de rendre l'apprentissage du système solaire accessible et amusant pour tous.</p>
+            </div>
+        </section>
+
+        
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <h2>Contactez-Nous</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Informations de Contact</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> contact@systemesolaire.fr</li>
+                            <li><i class="fas fa-phone"></i> +212 6 33 45 67 89</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Casablanca, 25 000</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" placeholder="Sujet">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <footer>
+    <p>© 2025 Exploration du Système Solaire - Mini Projet</p>
+    <div class="footer-links">
+      <a href="#">Politique de Confidentialité</a>
+      <a href="#">Conditions d'Utilisation</a>
+      <a href="#">Contactez le CNES</a>
+    </div>
+  </footer>
+    </footer>
+
+    
+    <div class="modal" id="loginModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer la fenêtre">&times;</button>
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Fermer la fenêtre">&times;</button>
+            <h2>Inscription</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Nom complet</label>
+                    <input type="text" id="signupName" placeholder="Exemple : Bartal Mohamed Amine" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Mot de passe</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirmer le mot de passe</label>
+                    <input type="password" id="signupConfirm" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

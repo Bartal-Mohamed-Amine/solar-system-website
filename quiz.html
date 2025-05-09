@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur le Système Solaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+<link rel="stylesheet" href="css/auth.css"> 
+<link rel="icon" href="images/favicon.png" type="image/jpeg">
+    <link rel="shortcut icon" href="images/favicon.png">
+</head>
+<body>
+    <audio id="spaceship-sound" autoplay loop volume="0.2">
+        <source src="spaceship-rumble.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html" class="active">Accueil</a>
+            <a href="index.html#about">À propos</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="report.html" class="bouton-rapport">
+                <i class="fas fa-file-alt"></i> Rapport
+            </a>
+        </div>
+        <div class="auth-buttons">
+            <button class="auth-button login" id="loginBtn">Connexion</button>
+            <button class="auth-button signup" id="signupBtn">Inscription</button>
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="quiz-header">
+            <h1>Quiz du Système Solaire</h1>
+            <p class="subtitle">Testez vos connaissances sur notre système solaire</p>
+        </header>
+
+        <section class="quiz-container">
+            <div class="quiz-progress">
+                <div class="progress-bar"></div>
+                <span class="progress-text">Question <span id="current-question">1</span>/10</span>
+            </div>
+
+            <div class="quiz-question">
+                <h2 id="question-text">Chargement de la question...</h2>
+            </div>
+
+            <div class="quiz-options" id="options-container">
+                
+            </div>
+
+            <div class="quiz-navigation">
+                <button id="prev-btn" disabled>Précédent</button>
+                <button id="next-btn">Suivant</button>
+                <button id="submit-btn" class="hidden">Soumettre</button>
+            </div>
+        </section>
+
+        <div class="quiz-result hidden" id="result-container">
+            <h2>Résultats du Quiz</h2>
+            <p>Vous avez obtenu <span id="score">0</span>/10</p>
+            <div id="result-details"></div>
+            <button id="restart-btn">Recommencer</button>
+        </div>
+    </div>
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Connexion</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Inscription</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Nom complet</label>
+                    <input type="text" id="signupName" placeholder="Who Knows" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Mot de passe</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirmer mot de passe</label>
+                    <input type="password" id="signupConfirm" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="cta-button">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+<script src="js/auth.js"></script> 
+    <script src="js/quiz.js"></script>
+</body>
+</html>
