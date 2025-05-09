@@ -1,7 +1,7 @@
 # 🌌 Solar System Simulation
 
 An interactive and animated web simulation of the solar system using HTML, CSS, and JavaScript.
-Visit here: [Visit the project](https://bartal-mohamed-amine.github.io/)
+Visit here: [Visit the project](https://bartal-mohamed-amine.github.io/solar-system-website/index.html)
 
 ## 🌠 Features
 
