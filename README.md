@@ -12,6 +12,7 @@ An interactive and animated web simulation of the solar system using HTML, CSS, 
 ## 📂 Project Structure
 
 📦solar-system-website
+<pre>📦solar-system-website
 ├── 📂css
 │   ├── style.css          # Main styles (header, footer, common elements)
 │   ├── auth.css           # Authentication modal styles
@@ -34,7 +35,7 @@ An interactive and animated web simulation of the solar system using HTML, CSS, 
 ├── simulation.html        # Solar system simulation
 ├── report.html            # Mission reports
 ├── launch.html            # Rocket launch simulation
-└── code.html              # Code examples/educational
+└── code.html              # Code examples/educational </pre>
 
 ## 🛠️ Tech Stack
 
