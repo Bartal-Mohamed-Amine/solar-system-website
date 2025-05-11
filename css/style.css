@@ -259,8 +259,6 @@ body.light-mode .planet-info {
 body.light-mode .planet-info h3 {
     color: var(--primary);
 }
-
-/* Footer */
 footer {
     margin-top: 4rem;
     padding: 2rem 0;
